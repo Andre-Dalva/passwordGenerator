@@ -1,6 +1,6 @@
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "1234567890";
-const symbols = "@#$%&~!"
+const symbols = "@#$%&~!-=_*"
 
 function generate(elements, size){
     const password = [];
