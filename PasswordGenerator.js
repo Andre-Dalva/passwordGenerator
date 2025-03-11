@@ -23,7 +23,7 @@ function checkRequirements(){
     const size = Number(document.getElementById("size").value);
     const result = document.getElementById("result");
 
-    let elements = [];
+    const elements = [];
 
     if(hasSymbols.checked)
         elements.push(...symbols);
