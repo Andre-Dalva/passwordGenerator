@@ -3,16 +3,16 @@ const numbers = "1234567890";
 const symbols = "@#$%&~!-=_*"
 
 function generate(elements, size){
-    const password = [];
+    let password = "";
     const max = elements.length;
     let element;
 
     for(let i = 0; i < size; i++){
         element = elements[Math.floor(Math.random()*max)];
-        password.push(element);
+        password += element;
     }
 
-    result.textContent = `"${password.join("")}"`;
+    result.textContent = `"${password}"`;
 }
 
 function checkRequirements(){
@@ -20,19 +20,17 @@ function checkRequirements(){
     const hasUpperCase = document.getElementById("upperCase");
     const hasNumbers = document.getElementById("numbers");
     const hasSymbols = document.getElementById("symbols");
-    const size = Number(document.getElementById("size").value);
     const result = document.getElementById("result");
+    const size = Number(document.getElementById("size").value);
 
     const elements = [];
 
-    if(hasSymbols.checked)
-        elements.push(...symbols);
-    if(hasUpperCase.checked)
-        elements.push(...(letters.toUpperCase()));
-    if(hasNumbers.checked)
-        elements.push(...numbers);
-    if(hasLowerCase.checked)
-        elements.push(...letters);
+    if(hasSymbols.checked) elements.push(...symbols);
+    if(hasUpperCase.checked) elements.push(...(letters.toUpperCase()));
+    if(hasNumbers.checked) elements.push(...numbers);
+    if(hasLowerCase.checked) elements.push(...letters);
+
+    //In case we select nothing or the size is too large.
     if(!(hasLowerCase.checked) && !(hasNumbers.checked) && !(hasUpperCase.checked) && !(hasSymbols.checked)){
         result.textContent = "Select an option.";
         return 0;
