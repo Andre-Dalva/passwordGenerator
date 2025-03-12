@@ -45,3 +45,11 @@ label{
 #result{
     cursor: text;
 }
+
+@media screen and (max-width: 600px) {
+    form{
+        width: 100%;
+        margin: 0px;
+        padding: 1% 0px;
+    }
+}
